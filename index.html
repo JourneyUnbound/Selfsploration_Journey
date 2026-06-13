@@ -410,23 +410,23 @@
             }
         };
 
-        // Static Master Matrix (Kept precisely for dynamic calculations)
+        // Static Master Matrix (Fully updated with newly supplied context scenes)
         const QUESTIONS = [
             {
                 id: 1,
                 scene: "You wake up and sunlight is streaming into your room. You feel a bright, clear energy in yourself as the day begins.",
                 question: "How do you start your day?",
                 answers: [
-                    { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I decide on one thing that matters most today and begin there." },
-                    { archetype: 'Pathwalker', value: 2, orientation: 'Unbound', text: "I follow whatever pulls at me first and see where it leads." },
-                    { archetype: 'Ember-Keeper', value: -2, orientation: 'Bound', text: "I take a few quiet minutes for myself before anything else begins." },
-                    { archetype: 'Ember-Keeper', value: 2, orientation: 'Unbound', text: "I reach out to someone I care about to share the good feeling." },
-                    { archetype: 'Metamorph', value: -1, orientation: 'Bound', text: "I set an intention for who I want to be today and step into it." },
-                    { archetype: 'Metamorph', value: 1, orientation: 'Unbound', text: "I let the energy of the morning shape what I do next." },
-                    { archetype: 'Threader', value: -1, orientation: 'Bound', text: "I think about what today connects to in the bigger picture and start from there." },
-                    { archetype: 'Threader', value: 1, orientation: 'Unbound', text: "I check in with what is happening around me and let that guide my first move." },
-                    { archetype: 'Deep Eye', value: -2, orientation: 'Bound', text: "I sit quietly for a moment and notice how I actually feel before I do anything." },
-                    { archetype: 'Deep Eye', value: 2, orientation: 'Unbound', text: "I take in the details of the morning around me and let what I notice set the tone." }
+                    { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I check my plans and set an intention for the day." },
+                    { archetype: 'Pathwalker', value: 2, orientation: 'Unbound', text: "I step outside to greet the morning light and breathe in the fresh air." },
+                    { archetype: 'Ember-Keeper', value: -2, orientation: 'Bound', text: "I stretch gently and breathe deeply to welcome the day." },
+                    { archetype: 'Ember-Keeper', value: 2, orientation: 'Unbound', text: "I send a silent wish of peace to the people still sleeping in my home." },
+                    { archetype: 'Metamorph', value: -1, orientation: 'Bound', text: "I think about what excites me today and visualize it." },
+                    { archetype: 'Metamorph', value: 1, orientation: 'Unbound', text: "I imagine the version of me who has already started the day with joy." },
+                    { archetype: 'Threader', value: -1, orientation: 'Bound', text: "I review the threads of my commitments and order them by what feels most alive." },
+                    { archetype: 'Threader', value: 1, orientation: 'Unbound', text: "I check my phone for notifications or messages." },
+                    { archetype: 'Deep Eye', value: -2, orientation: 'Bound', text: "I spend a moment in silence, observing my body and mind." },
+                    { archetype: 'Deep Eye', value: 2, orientation: 'Unbound', text: "I relax back a little, enjoying the quiet before the day begins." }
                 ]
             },
             {
@@ -448,7 +448,7 @@
             },
             {
                 id: 3,
-                scene: "A friend shares news with you that you did not see coming. It lands quickly and you feel something shift inside you as they speak.",
+                scene: "Someone shares news that surprises you.",
                 question: "What is your reaction to the news?",
                 answers: [
                     { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I decide what action to take next based on my initial instinct." },
@@ -465,7 +465,7 @@
             },
             {
                 id: 4,
-                scene: "You are standing outside a class you have signed up for, about to walk in for the first time. The door is right in front of you.",
+                scene: "You are standing outside a class you have signed up for, about to walk in for the first time.",
                 question: "How do you feel as you reach for the door?",
                 answers: [
                     { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I imagine myself successfully engaging and making the most of it." },
@@ -482,7 +482,7 @@
             },
             {
                 id: 5,
-                scene: "You are in the middle of a conversation with a friend and a wave of gratitude comes up in you. It rises quietly and you become aware of it as they are speaking.",
+                scene: "During a conversation with a friend, a wave of gratitude comes up for you.",
                 question: "How do you express it?",
                 answers: [
                     { archetype: 'Pathwalker', value: -1, orientation: 'Bound', text: "I express it through a small act of kindness afterward." },
@@ -516,7 +516,7 @@
             },
             {
                 id: 7,
-                scene: "A friend asks for your honest opinion about a decision they are considering. They are looking to you for your perspective.",
+                scene: "A friend asks for your honest opinion about a decision they are considering.",
                 question: "How do you share your opinion?",
                 answers: [
                     { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I trust my intuition and offer the clearest next step I can see." },
@@ -533,7 +533,7 @@
             },
             {
                 id: 8,
-                scene: "You find yourself with a good amount of free time between commitments and decide to spend it on yourself.",
+                scene: "You find yourself with a good amount of free time between commitments and decide to have a day of self-care.",
                 question: "What is the first thing you do for yourself?",
                 answers: [
                     { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I choose one small action that moves me toward a personal goal." },
@@ -550,7 +550,7 @@
             },
             {
                 id: 9,
-                scene: "A friend looks at you and offers you a genuine compliment about who you are. It is specific and it lands.",
+                scene: "A friend pays you a genuine compliment about who you are.",
                 question: "How do you respond?",
                 answers: [
                     { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I accept the truth of their words and store it as fuel for my journey." },
@@ -567,7 +567,7 @@
             },
             {
                 id: 10,
-                scene: "After a warm visit with a close friend, you are walking home. The time you spent together is still with you.",
+                scene: "After a warm visit with a close friend, you are walking home.",
                 question: "What do you feel on your walk home?",
                 answers: [
                     { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I carry the clarity of our connection as a steady compass for my next steps." },
