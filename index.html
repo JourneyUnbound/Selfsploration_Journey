@@ -273,7 +273,7 @@
 
     <div class="container" id="quizContainer">
         <div class="logo-header">
-            <h1>Journey Unbound™  Selfsploration™ Journey</h1>
+            <h1>Journey Unbound™ Selfsploration™ Journey</h1>
             <p class="tagline">Illuminate your S t o r e y</p>
         </div>
 
@@ -324,7 +324,7 @@
     </div>
 
     <script>
-        // ARCHETYPE DATABASE
+        // ARCHETYPE SEED ENGINE CONTENT
         const ARCHETYPE_CONTENT = {
             "Pathwalker": {
                 "Bound": {
@@ -408,284 +408,320 @@
             }
         };
 
-        // Static Master Database
-        const MASTER_QUESTIONS = [
+        // Decoupled Symmetrical Database Layer
+        const LIGHT_POOL = [
             {
-                id: 1,
-                scene: "You wake up and sunlight is streaming into your room. You feel a bright, clear energy in yourself as the day begins.",
-                question: "How do you start your day?",
-                answers: [
-                    { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I check my list and move my feet toward the first task." },
-                    { archetype: 'Pathwalker', value: 2, orientation: 'Unbound', text: "I step outside to greet the morning light and breathe in the fresh air." },
-                    { archetype: 'Ember-Keeper', value: -2, orientation: 'Bound', text: "I stretch gently and breathe deeply to welcome the day." },
-                    { archetype: 'Ember-Keeper', value: 2, orientation: 'Unbound', text: "I send a silent wish of peace to the people still sleeping in my home." },
-                    { archetype: 'Metamorph', value: -1, orientation: 'Bound', text: "I think about what excites me today and visualize it." },
-                    { archetype: 'Metamorph', value: 1, orientation: 'Unbound', text: "I imagine the version of me who has already started the day with joy." },
-                    { archetype: 'Threader', value: -1, orientation: 'Bound', text: "I review the threads of my commitments and order them by what feels most alive." },
-                    { archetype: 'Threader', value: 1, orientation: 'Unbound', text: "I check my phone for notifications or messages." },
-                    { archetype: 'Deep Eye', value: -2, orientation: 'Bound', text: "I spend a moment in silence, observing my body and mind." },
-                    { archetype: 'Deep Eye', value: 2, orientation: 'Unbound', text: "I relax back a little, enjoying the quiet before the day begins." }
-                ]
+                scene: "A coworker quietly leaves the team lunch early. Later you notice them sitting alone in the break room with their head in their hands.",
+                question: "What do you do?",
+                answers: {
+                    "Pathwalker": { Bound: "Walk over, sit beside them, and stay quietly present.", Unbound: "Say, \"I'm here if you want to talk,\" and hold their gaze gently." },
+                    "Ember-Keeper": { Bound: "Offer a practical help: \"Can I bring you a tea or cover your next task?\"", Unbound: "Put a hand on their shoulder and suggest stepping outside for fresh air." },
+                    "Metamorph": { Bound: "Ask, \"Do you want to tell me what happened?\" and listen without interrupting.", Unbound: "Share a brief time when you felt the same, then ask if they'd like company." },
+                    "Threader": { Bound: "Quietly offer to take notes or handle a small duty so they can step away.", Unbound: "Text a discreet group check-in: \"I'm with [Name] for a moment — can help if needed.\"" },
+                    "Deep Eye": { Bound: "Respect their space and say, \"I'll check in after a bit if that's okay.\"", Unbound: "Offer resources and support: \"If you want, I can share a counselor contact or go with you to HR.\"" }
+                }
             },
             {
-                id: 2,
-                scene: "You sit down to start a task and find your mind is somewhere else before you even begin.",
-                question: "How do you bring your focus to the task at hand?",
-                answers: [
-                    { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I set a timer for five minutes and work with single-minded focus until it rings." },
-                    { archetype: 'Pathwalker', value: 2, orientation: 'Unbound', text: "I tell myself I can handle this later and let my mind drift for a bit." },
-                    { archetype: 'Ember-Keeper', value: -2, orientation: 'Bound', text: "I gently remind myself of my intention and begin again with a clear head." },
-                    { archetype: 'Ember-Keeper', value: 2, orientation: 'Unbound', text: "I name the feeling of distraction with kindness and let it settle as I return to my breath." },
-                    { archetype: 'Metamorph', value: -1, orientation: 'Bound', text: "I visualize my task completed, then jump right in with energy." },
-                    { archetype: 'Metamorph', value: 1, orientation: 'Unbound', text: "I get curious about my distraction and then switch to something else that excites me." },
-                    { archetype: 'Threader', value: -1, orientation: 'Bound', text: "I ask myself what the main goal is and then act on the most immediate step." },
-                    { archetype: 'Threader', value: 1, orientation: 'Unbound', text: "I notice what's pulling my focus and decide to explore that feeling or thought outwardly." },
-                    { archetype: 'Deep Eye', value: -2, orientation: 'Bound', text: "I pause for a moment, take a deep breath, and gently bring my attention back." },
-                    { archetype: 'Deep Eye', value: 2, orientation: 'Unbound', text: "I look out the window or around me, letting the external scene reset my attention." }
-                ]
+                scene: "At a community potluck, someone asks you to coordinate the cleanup when volunteers are slow to step forward.",
+                question: "What do you do to take charge and get things moving?",
+                answers: {
+                    "Pathwalker": { Bound: "Say, \"Let's break it down — who can handle tables, dishes, and trash?\" and assign tasks.", Unbound: "Step into the center, clap once, and call out, \"Team, let's make this quick and fun.\"" },
+                    "Ember-Keeper": { Bound: "Offer a clear, simple plan: \"I'll lead the dishes; who will handle trash and tables?\"", Unbound: "Smile and thank the first volunteer, then name the next task and invite someone to join." },
+                    "Metamorph": { Bound: "Turn the moment into a shared challenge: \"Let's try a two-person sweep — ready?\"", Unbound: "Model the work by starting with a visible task and say, \"Watch—this is easier together.\"" },
+                    "Threader": { Bound: "Make a quick checklist aloud and delegate by name to get buy-in.", Unbound: "Send a short group message with roles: \"Cleanup team: tables, dishes, trash — jump in.\"" },
+                    "Deep Eye": { Bound: "Hold a calm tone, explain why speed matters, and ask who wants to lead a small team.", Unbound: "Acknowledge people's effort and say, \"I'll coordinate — follow my lead if you want to help.\"" }
+                }
             },
             {
-                id: 3,
-                scene: "Someone shares news that surprises you.",
-                question: "What is your reaction to the news?",
-                answers: [
-                    { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I let the news settle and see how it points toward my next step." },
-                    { archetype: 'Pathwalker', value: 2, orientation: 'Unbound', text: "I lean in with curiosity and ask how this new information lands for them." },
-                    { archetype: 'Ember-Keeper', value: -2, orientation: 'Bound', text: "I take a breath and share my feelings honestly." },
-                    { archetype: 'Ember-Keeper', value: 2, orientation: 'Unbound', text: "I express my surprise openly and seek connection." },
-                    { archetype: 'Metamorph', value: -1, orientation: 'Bound', text: "I hold the news in my mind and see where it fits in my view of things." },
-                    { archetype: 'Metamorph', value: 1, orientation: 'Unbound', text: "I share how this shift changes our shared story and what possibilities it opens." },
-                    { archetype: 'Threader', value: -1, orientation: 'Bound', text: "I trace the thread of this news back to its source to understand its impact on my path." },
-                    { archetype: 'Threader', value: 1, orientation: 'Unbound', text: "I lean in and ask, \"How did this change things for you?\"" },
-                    { archetype: 'Deep Eye', value: -2, orientation: 'Bound', text: "I pause, breathe, and name the feeling the news brought up." },
-                    { archetype: 'Deep Eye', value: 2, orientation: 'Unbound', text: "I look at the person's face and notice how their words land in my chest." }
-                ]
+                scene: "After months of quiet effort, you finish restoring an old garden that belonged to your grandmother.",
+                question: "How do you celebrate your accomplishment?",
+                answers: {
+                    "Pathwalker": { Bound: "Stand back, take a slow breath, and name one thing you did well.", Unbound: "Call a friend and say, \"You have to see this — I finished the garden.\"" },
+                    "Ember-Keeper": { Bound: "Make a small ritual: pour a cup of tea and sit in the first planted chair.", Unbound: "Invite a neighbor over and say, \"Come see what we've brought back to life.\"" },
+                    "Metamorph": { Bound: "Take photos and note the changes you made so you remember the steps.", Unbound: "Plant one more seed as an intention for the future and speak that intention aloud." },
+                    "Threader": { Bound: "Write a short list of milestones you hit and tuck it into the garden box.", Unbound: "Share a before-and-after post and tag people who helped." },
+                    "Deep Eye": { Bound: "Sit in silence for a few minutes and notice how your body feels.", Unbound: "Walk the border slowly, touching the plants and saying a quiet thank-you." }
+                }
             },
             {
-                id: 4,
-                scene: "You are standing outside a class you have signed up for, about to walk in for the first time.",
-                question: "How do you feel as you reach for the door?",
-                answers: [
-                    { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I feel steady knowing I chose this path." },
-                    { archetype: 'Pathwalker', value: 2, orientation: 'Unbound', text: "I feel eager and ready to explore something new." },
-                    { archetype: 'Ember-Keeper', value: -2, orientation: 'Bound', text: "I feel grounded as I take a deep breath." },
-                    { archetype: 'Ember-Keeper', value: 2, orientation: 'Unbound', text: "I feel open and ready to meet the energy in the room." },
-                    { archetype: 'Metamorph', value: -1, orientation: 'Bound', text: "I feel curious about the new skills waiting inside." },
-                    { archetype: 'Metamorph', value: 1, orientation: 'Unbound', text: "I feel excited about the potential transformations this experience might bring." },
-                    { archetype: 'Threader', value: -1, orientation: 'Bound', text: "I feel anchored by the intention that brought me here." },
-                    { archetype: 'Threader', value: 1, orientation: 'Unbound', text: "I feel a spark of connection with the people inside." },
-                    { archetype: 'Deep Eye', value: -2, orientation: 'Bound', text: "I feel calm as I notice my body and breath." },
-                    { archetype: 'Deep Eye', value: 2, orientation: 'Unbound', text: "I feel alert as I glance around and take in the space." }
-                ]
+                scene: "A stranger returns your lost wallet with everything still inside and refuses any reward.",
+                question: "How do you express your gratitude toward the stranger?",
+                answers: {
+                    "Pathwalker": { Bound: "Thank them warmly and offer your name and a handshake.", Unbound: "Say, \"I can't believe you found it — thank you so much\"" },
+                    "Ember-Keeper": { Bound: "Offer a small gift or a sincere written note of thanks.", Unbound: "Insist on buying them a coffee and listen to their story as a way to say thanks." },
+                    "Metamorph": { Bound: "Tell them specifically what their action saved you from and why it matters.", Unbound: "Share a quick, heartfelt story of relief and say, \"You changed my day.\"" },
+                    "Threader": { Bound: "Ask if they have a preferred way to be thanked and follow it.", Unbound: "Post a public thank-you where appropriate (community board, social) and respect their privacy." },
+                    "Deep Eye": { Bound: "Look them in the eye and say, \"Your kindness means a lot.\"", Unbound: "Offer to pay forward the favor and say, \"I will do the same for someone else today.\"" }
+                }
             },
             {
-                id: 5,
-                scene: "During a conversation with a friend, a wave of gratitude comes up for you.",
-                question: "How do you express it?",
-                answers: [
-                    { archetype: 'Pathwalker', value: -1, orientation: 'Bound', text: "I express it through a small act of kindness afterward." },
-                    { archetype: 'Pathwalker', value: 1, orientation: 'Unbound', text: "I smile and express appreciation openly." },
-                    { archetype: 'Ember-Keeper', value: -1, orientation: 'Bound', text: "I hold this feeling warmly within me while I listen fully to their words." },
-                    { archetype: 'Ember-Keeper', value: 1, orientation: 'Unbound', text: "I send them a quick message or note afterward." },
-                    { archetype: 'Metamorph', value: -1, orientation: 'Bound', text: "I pause to reflect on the moment before thanking." },
-                    { archetype: 'Metamorph', value: 1, orientation: 'Unbound', text: "I let the feeling of gratitude transform my tone and soften my expression." },
-                    { archetype: 'Threader', value: -1, orientation: 'Bound', text: "I recognize the specific moment where our stories connected and honor that link." },
-                    { archetype: 'Threader', value: 1, orientation: 'Unbound', text: "I share how their words or actions made a difference for me." },
-                    { archetype: 'Deep Eye', value: -2, orientation: 'Bound', text: "I look into the person's eyes and thank them sincerely." },
-                    { archetype: 'Deep Eye', value: 2, orientation: 'Unbound', text: "I look around and feel the warmth of the moment, letting that guide my thanks." }
-                ]
+                scene: "A group finishes a simple community mural; the change is beautiful and clearly came from ordinary people stepping up.",
+                question: "What would you add to the mural if you had a paintbrush in hand right now?",
+                answers: {
+                    "Pathwalker": { Bound: "Step forward and add a small motif that honors the neighborhood's history.", Unbound: "Grab a brush and paint a bright, bold stroke that ties two sections together." },
+                    "Ember-Keeper": { Bound: "Carefully match the existing colors and blend a small accent that complements the work.", Unbound: "Laugh, pick a fun color, and add a playful detail that makes people smile." },
+                    "Metamorph": { Bound: "Draw a subtle symbol that represents growth and change.", Unbound: "Sketch a tiny scene of people helping each other to mirror how it was made." },
+                    "Threader": { Bound: "Add a border pattern that connects each artist's style into a whole.", Unbound: "Paint a small signature spot where future contributors can add their mark." },
+                    "Deep Eye": { Bound: "Pause, notice the composition, and place a single careful line that balances the piece.", Unbound: "Whisper an encouragement to the team and place a gentle, meaningful mark." }
+                }
             },
             {
-                id: 6,
-                scene: "You have finished a demanding task and have a moment of quiet before your next commitment. The room is still.",
-                question: "How do you use this transition time?",
-                answers: [
-                    { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I check my plans and set an intention for the next step." },
-                    { archetype: 'Pathwalker', value: 2, orientation: 'Unbound', text: "I step outside to greet the fresh air and breathe deeply." },
-                    { archetype: 'Ember-Keeper', value: -2, orientation: 'Bound', text: "I stretch gently and breathe deeply to restore my energy." },
-                    { archetype: 'Ember-Keeper', value: 2, orientation: 'Unbound', text: "I send a silent wish of peace to those I am about to meet." },
-                    { archetype: 'Metamorph', value: -1, orientation: 'Bound', text: "I think about what has changed since I started and visualize the next phase." },
-                    { archetype: 'Metamorph', value: 1, orientation: 'Unbound', text: "I imagine how I want to show up in the next part of my day." },
-                    { archetype: 'Threader', value: -1, orientation: 'Bound', text: "I review the threads of my recent work and order them by what feels most alive." },
-                    { archetype: 'Threader', value: 1, orientation: 'Unbound', text: "I check for any messages that might guide my next connection." },
-                    { archetype: 'Deep Eye', value: -2, orientation: 'Bound', text: "I spend a moment in silence, observing my body and mind." },
-                    { archetype: 'Deep Eye', value: 2, orientation: 'Unbound', text: "I relax back a little, enjoying the quiet and observing the space." }
-                ]
+                scene: "Friends you haven’t seen in years will be gathering for a class reunion.",
+                question: "When you arrive at the reunion what’s your immediate reaction?",
+                answers: {
+                    "Pathwalker": { Bound: "Smile broadly, walk straight toward the main group, and open with, \"Look at you all!\"", Unbound: "Spot someone familiar, call their name loudly, and cross the room for a hug." },
+                    "Ember-Keeper": { Bound: "Take a breath to steady your excitement, then approach with warm eye contact.", Unbound: "Laugh out loud at a familiar face and say, \"I can't believe we're all here!\"" },
+                    "Metamorph": { Bound: "Scan the room for one person to reconnect with and move deliberately toward them.", Unbound: "Let yourself grin, say something playful, and start a lively conversation." },
+                    "Threader": { Bound: "Find the photo table or memory board and share a quick story from the past.", Unbound: "Pull someone aside to catch up and ask, \"What have you been up to since we last met?\"" },
+                    "Deep Eye": { Bound: "Pause for a second to take in the scene, then step forward with calm joy.", Unbound: "Move into the circle and give a heartfelt hug, saying, \"This feels so good.\"" }
+                }
             },
             {
-                id: 7,
-                scene: "A friend asks for your honest opinion about a decision they are considering.",
-                question: "How do you share your opinion?",
-                answers: [
-                    { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I trust my intuition and offer the clearest next step I can see." },
-                    { archetype: 'Pathwalker', value: 2, orientation: 'Unbound', text: "I express my thoughts clearly and openly." },
-                    { archetype: 'Ember-Keeper', value: -2, orientation: 'Bound', text: "I take a moment to consider how best to communicate it kindly." },
-                    { archetype: 'Ember-Keeper', value: 2, orientation: 'Unbound', text: "I share my perspective with warmth and invite them to share their own feelings." },
-                    { archetype: 'Metamorph', value: -1, orientation: 'Bound', text: "I focus on being constructive and helpful." },
-                    { archetype: 'Metamorph', value: 1, orientation: 'Unbound', text: "I explore how this choice might evolve them and reflect that potential back." },
-                    { archetype: 'Threader', value: -1, orientation: 'Bound', text: "I look at the pattern of their past choices and point out where this fits." },
-                    { archetype: 'Threader', value: 1, orientation: 'Unbound', text: "I share my reasoning and invite dialogue." },
-                    { archetype: 'Deep Eye', value: -2, orientation: 'Bound', text: "I offer my honest perspective with warmth and respect." },
-                    { archetype: 'Deep Eye', value: 2, orientation: 'Unbound', text: "I notice the emotional current between us and adjust my tone to hold space." }
-                ]
+                scene: "A major setback just canceled the plan you’ve been building toward for over a year.",
+                question: "How does the cancellation make you feel?",
+                answers: {
+                    "Pathwalker": { Bound: "Take a deep breath, name the disappointment out loud, and list one next step.", Unbound: "Feel the frustration, then say, \"Okay — what can I try instead?\"" },
+                    "Ember-Keeper": { Bound: "Allow yourself a short break to rest, then return with a practical adjustment plan.", Unbound: "Call a supportive friend, talk it through, and let them remind you of what you did achieve." },
+                    "Metamorph": { Bound: "Note what changed during the year and identify one transferable skill you gained.", Unbound: "Reframe the setback aloud as a pivot and speak a small intention for the next move." },
+                    "Threader": { Bound: "Map the timeline to see what to salvage and preserve the useful threads.", Unbound: "Send out a short update to stakeholders with honesty and a proposed next step." },
+                    "Deep Eye": { Bound: "Sit with the feeling, name it—anger, sadness, relief—and breathe into it.", Unbound: "Offer yourself compassion: \"This hurts, and I will find a way forward.\"" }
+                }
             },
             {
-                id: 8,
-                scene: "You find yourself with a good amount of free time between commitments and decide to have a day of self-care.",
-                question: "What is the first thing you do for yourself?",
-                answers: [
-                    { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I choose one small action that moves me toward a personal goal." },
-                    { archetype: 'Pathwalker', value: 2, orientation: 'Unbound', text: "I take a long walk outside, soaking in nature." },
-                    { archetype: 'Ember-Keeper', value: -2, orientation: 'Bound', text: "I prepare a nourishing meal for myself." },
-                    { archetype: 'Ember-Keeper', value: 2, orientation: 'Unbound', text: "I create a cozy atmosphere that invites a sense of safety and ease." },
-                    { archetype: 'Metamorph', value: -1, orientation: 'Bound', text: "I pause to notice what part of me needs tending right now." },
-                    { archetype: 'Metamorph', value: 1, orientation: 'Unbound', text: "I indulge in a creative activity that reconnects me." },
-                    { archetype: 'Threader', value: -1, orientation: 'Bound', text: "I check the rhythm of my day and adjust my pace to match my energy." },
-                    { archetype: 'Threader', value: 1, orientation: 'Unbound', text: "I reach out to someone I care about for connection." },
-                    { archetype: 'Deep Eye', value: -2, orientation: 'Bound', text: "I spend time meditating or quieting my mind." },
-                    { archetype: 'Deep Eye', value: 2, orientation: 'Unbound', text: "I listen to music or a favorite podcast while resting." }
-                ]
+                scene: "At a community meeting, a longtime volunteer calmly corrects a factual error and offers a clear, practical fix without blaming anyone.",
+                question: "How do you acknowledge their calm competence in front of the group?",
+                answers: {
+                    "Pathwalker": { Bound: "Say, \"Thank you — that was clear and helpful,\" and direct attention to their solution.", Unbound: "Stand, applaud softly, and say, \"That clarity really helped us—thank you.\"" },
+                    "Ember-Keeper": { Bound: "Hand them the floor briefly and invite others to follow their lead.", Unbound: "Say their name and add, \"You handled that so well,\" with genuine warmth." },
+                    "Metamorph": { Bound: "Point out the practical value of their fix and name its immediate benefit.", Unbound: "Reflect briefly on how their calm altered the room and thank them for modeling that behavior." },
+                    "Threader": { Bound: "Note their history of service and say, \"This is why we rely on your steady voice.\"", Unbound: "Offer to document their fix and credit them in the meeting notes." },
+                    "Deep Eye": { Bound: "Meet their gaze and say quietly, \"I respect how you held this space.\"", Unbound: "After the meeting, approach and say, \"Your steadiness helped everyone—thank you.\"" }
+                }
             },
             {
-                id: 9,
-                scene: "A friend pays you a genuine compliment about who you are.",
-                question: "How do you respond?",
-                answers: [
-                    { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I accept the truth of their words and store it as fuel for my journey." },
-                    { archetype: 'Pathwalker', value: 2, orientation: 'Unbound', text: "I feel grateful and respond with a smile." },
-                    { archetype: 'Ember-Keeper', value: -2, orientation: 'Bound', text: "I modestly brush it off and redirect the conversation." },
-                    { archetype: 'Ember-Keeper', value: 2, orientation: 'Unbound', text: "I return the compliment or share my gratitude openly." },
-                    { archetype: 'Metamorph', value: -1, orientation: 'Bound', text: "I let the compliment reshape how I see myself for a moment." },
-                    { archetype: 'Metamorph', value: 1, orientation: 'Unbound', text: "I share how hearing this changes my mood and lifts my spirits." },
-                    { archetype: 'Threader', value: -1, orientation: 'Bound', text: "I acknowledge the compliment and express my appreciation." },
-                    { archetype: 'Threader', value: 1, orientation: 'Unbound', text: "I acknowledge the beauty of their perception and how it weaves us closer." },
-                    { archetype: 'Deep Eye', value: -2, orientation: 'Bound', text: "I thank them warmly and accept it inwardly." },
-                    { archetype: 'Deep Eye', value: 2, orientation: 'Unbound', text: "I watch the warmth spread in my chest and let it guide my smile." }
-                ]
+                scene: "You get a call offering a new job you interviewed for—it's an opportunity you weren't sure you'd win.",
+                question: "What do you say to accept the offer with assurance?",
+                answers: {
+                    "Pathwalker": { Bound: "Say, \"Thank you — I accept and look forward to starting,\" in a steady voice.", Unbound: "Answer, \"Yes, I accept — I'm excited to join the team,\" then smile into the phone." },
+                    "Ember-Keeper": { Bound: "Ask a brief practical question about next steps, then confirm your acceptance.", Unbound: "Say, \"I'm honored — when can I meet the team?\" with warm confidence." },
+                    "Metamorph": { Bound: "State your acceptance and one intention: \"I accept and plan to begin by focusing on X.\"", Unbound: "Accept the offer and add, \"I can't wait to contribute and grow here.\"" },
+                    "Threader": { Bound: "Confirm the role clearly and ask about the start date so you can plan.", Unbound: "Accept, then ask for any documents to sign and confirm who you'll report to." },
+                    "Deep Eye": { Bound: "Thank them sincerely and say, \"I accept and am ready for the responsibilities.\"", Unbound: "Take a breath, say, \"I accept — thank you for this opportunity,\" with calm assurance." }
+                }
             },
             {
-                id: 10,
-                scene: "After a warm visit with a close friend, you are walking home.",
-                question: "What do you feel on your walk home?",
-                answers: [
-                    { archetype: 'Pathwalker', value: -2, orientation: 'Bound', text: "I carry the clarity of our connection as a steady compass for my next steps." },
-                    { archetype: 'Pathwalker', value: 2, orientation: 'Unbound', text: "I feel energized and motivated." },
-                    { archetype: 'Ember-Keeper', value: -2, orientation: 'Bound', text: "I savor the moment of human connection." },
-                    { archetype: 'Ember-Keeper', value: 2, orientation: 'Unbound', text: "I carry a sense of gratitude and openness." },
-                    { archetype: 'Metamorph', value: -1, orientation: 'Bound', text: "I notice how the experience has softened my inner landscape." },
-                    { archetype: 'Metamorph', value: 1, orientation: 'Unbound', text: "I feel inspired by the connection we shared." },
-                    { archetype: 'Threader', value: -1, orientation: 'Bound', text: "I reflect on the pattern of care we shared and how it strengthens our bond." },
-                    { archetype: 'Threader', value: 1, orientation: 'Unbound', text: "I think about what I want to share next with my friend." },
-                    { archetype: 'Deep Eye', value: -2, orientation: 'Bound', text: "Warmth and contentment fill me." },
-                    { archetype: 'Deep Eye', value: 2, orientation: 'Unbound', text: "I feel the lingering resonance of our conversation echoing in the quiet street." }
-                ]
+                scene: "A friend calls you, voice shaky, and shares that they're overwhelmed after a recent breakup.",
+                question: "How do you respond when they tell you they're barely holding on?",
+                answers: {
+                    "Pathwalker": { Bound: "Say, \"I'm here — tell me what's hardest right now,\" and listen.", Unbound: "Offer, \"Come over, I'll make tea and sit with you,\" and leave time open." },
+                    "Ember-Keeper": { Bound: "Validate their feeling: \"That sounds really painful,\" and ask how you can help.", Unbound: "Offer a warm gesture: \"Let me bring you dinner tonight,\" and mean it." },
+                    "Metamorph": { Bound: "Ask gentle questions to help them name what they need in this moment.", Unbound: "Share a grounding practice you can do together on the call, like deep breaths." },
+                    "Threader": { Bound: "Help them make a small immediate plan: call a friend, rest, or sleep — one step.", Unbound: "Offer to text check-ins and schedule a time to talk again soon." },
+                    "Deep Eye": { Bound: "Stay present and silent when needed, signaling your steady attention.", Unbound: "Say, \"I see you,\" and hold the space for their feelings without fixing." }
+                }
             }
         ];
 
-        let QUESTIONS = []; // Will hold randomized questions
+        const SHADOW_POOL = [
+            {
+                scene: "Your dad went into surgery this morning. You two haven’t talked in 6 months after an argument about money. You drove to the hospital but didn’t go in. You’re sitting in your car. Visiting hours end in 20 minutes.",
+                question: "What do you do right now?",
+                answers: {
+                    "Pathwalker": { Bound: "Start engine. Drive home.", Unbound: "Sit there. “I’ll come tomorrow.”" },
+                    "Ember-Keeper": { Bound: "Get out. Walk to his room.", Unbound: "Text your mom. “Tell him I’m sorry.”" },
+                    "Metamorph": { Bound: "“I’m not ready.” Drive away.", Unbound: "you text your sister, “I’m outside”." },
+                    "Threader": { Bound: "Lock phone. Rest head on wheel.", Unbound: "Call him. Hang up before it rings." },
+                    "Deep Eye": { Bound: "Turn engine off. Feel the weight.", Unbound: "Scroll phone. Pretend you’re busy" }
+                }
+            },
+            {
+                scene: "You blew off your friend’s calls all week because you were annoyed they flaked on you last month. You just got a voicemail: “Hey… I know you’re mad. I just got laid off. I don’t know who else to call.”",
+                question: "What do you do after receiving it?",
+                answers: {
+                    "Pathwalker": { Bound: "Call back now. “I’m on my way.”", Unbound: "Text “That sucks,” and do nothing." },
+                    "Ember-Keeper": { Bound: "Drive to their place. No call.", Unbound: "“I’m so sorry,” then go silent." },
+                    "Metamorph": { Bound: "“I’m coming over. We’ll figure it out.”", Unbound: "“Let me know if you need anything.”" },
+                    "Threader": { Bound: "Delete the voicemail. Block them.", Unbound: "“Omg call me back,” then avoid them." },
+                    "Deep Eye": { Bound: "Listen twice. Call immediately.", Unbound: "Save voicemail. Don’t respond today." }
+                }
+            },
+            {
+                scene: "You notice a close friend has been distant and less available since they started hanging out with someone new.",
+                question: "How do you approach them about it?",
+                answers: {
+                    "Pathwalker": { Bound: "Don’t reach out. Let them go.", Unbound: "“Miss you!” Double text all week." },
+                    "Ember-Keeper": { Bound: "Stop initiating plans. Wait it out.", Unbound: "“So fun!” Like all their posts." },
+                    "Metamorph": { Bound: "“We’re drifting. I’m stepping back.”", Unbound: "“Can I join you guys next time?”" },
+                    "Threader": { Bound: "Keep your Saturday plans. Don’t text.", Unbound: "Feel the distance. Make tea anyway." },
+                    "Deep Eye": { Bound: "Notice the empty Saturday afternoon.", Unbound: "Watch their stories. Say nothing." }
+                }
+            },
+            {
+                scene: "It’s been 6 months since your dog died. You’re at a park and a stranger’s puppy runs up to you, tail wagging, wants to play. It looks just like yours did as a puppy.",
+                question: "What do you do in that moment?",
+                answers: {
+                    "Pathwalker": { Bound: "Step back. “I can’t today.” Walk away.", Unbound: "Kneel down. Play until you’re sobbing." },
+                    "Ember-Keeper": { Bound: "Shake head. Keep walking.", Unbound: "“What’s their name?” Pet them anyway." },
+                    "Metamorph": { Bound: "“Not mine.” Turn and leave park.", Unbound: "“Can I hold them?” Cry into their fur." },
+                    "Threader": { Bound: "Cross street. Avoid the dog.", Unbound: "Ask owner for breeder info. Screenshot everything." },
+                    "Deep Eye": { Bound: "Stop. Feel it hit. Don’t touch.", Unbound: "Smile. Pet them. Say “Just like mine.”" }
+                }
+            },
+            {
+                scene: "Your sibling borrows money “just until Friday” every month. It’s been 8 months. They just posted vacation photos.",
+                question: "What do you do when you see the post?",
+                answers: {
+                    "Pathwalker": { Bound: "Text: “We need to talk about money.”", Unbound: "Like the photo. Say “Looks amazing!”" },
+                    "Ember-Keeper": { Bound: "Close the app. Don’t respond to them.", Unbound: "Comment “Living your best life!” + ❤️" },
+                    "Metamorph": { Bound: "“No more loans.” Block transfers.", Unbound: "“Need help booking next trip?” Offer." },
+                    "Threader": { Bound: "Archive your text thread. Move on.", Unbound: "Screenshot the post. Don’t send it." },
+                    "Deep Eye": { Bound: "Notice the knot in your stomach.", Unbound: "Scroll past. Mark it mentally." }
+                }
+            },
+            {
+                scene: "You’ve been covering your coworker’s missed shifts for 3 weeks. Your boss just thanked them in the team meeting for “stepping up.”",
+                question: "What do you do right after the meeting ends?",
+                answers: {
+                    "Pathwalker": { Bound: "Walk to your boss. “We need to talk.”", Unbound: "Laugh it off. Say “No problem!”" },
+                    "Ember-Keeper": { Bound: "Stop covering shifts. No announcement.", Unbound: "“So glad I could help!” Email the team." },
+                    "Metamorph": { Bound: "“I’m done covering.” Set a boundary.", Unbound: "“Happy to jump in anytime!” Volunteer again." },
+                    "Threader": { Bound: "Update your resume on lunch.", Unbound: "Slam laptop shut. Keep working." },
+                    "Deep Eye": { Bound: "Feel the heat in your face.", Unbound: "Make a mental note. Stay quiet." }
+                }
+            },
+            {
+                scene: "You always remember birthdays and plan thoughtful gifts for your friend group. This year, your birthday passed and no one in the group even texted you. A week later they’re planning someone else’s surprise party in the group chat.",
+                question: "What do you do when you see the messages?",
+                answers: {
+                    "Pathwalker": { Bound: "“I’m out of the group chat.” Leave it.", Unbound: "“Omg yesss!” Drop party ideas." },
+                    "Ember-Keeper": { Bound: "Mute the chat. Don’t reply.", Unbound: "“I’ll bake the cake!” Volunteer." },
+                    "Metamorph": { Bound: "“I’m done planning.” Delete drafts.", Unbound: "“We should book that venue!” Jump in." },
+                    "Threader": { Bound: "Close chat. Read a book instead.", Unbound: "Reread your own ignored birthday text." },
+                    "Deep Eye": { Bound: "Notice the ache. Put phone down.", Unbound: "Watch the messages roll in." }
+                }
+            },
+            {
+                scene: "Your in-laws invite themselves to stay at your house for a week, but your place is small and you were counting on having downtime. Your partner tells you “It’ll be fine, just say yes so we don’t make it weird.”",
+                question: "How do you respond to your in-laws?",
+                answers: {
+                    "Pathwalker": { Bound: "“Yes, but Thursday-Sunday only.” Set end date.", Unbound: "“Stay as long as you want!” Clear schedule." },
+                    "Ember-Keeper": { Bound: "“Yes. I need quiet mornings.” Claim one boundary.", Unbound: "“Mi casa es su casa!” Hide exhaustion. Over-serve." },
+                    "Metamorph": { Bound: "“Yes. We’ll do dinners out.” Protect home space.", Unbound: "“Yes! I’ll take time off.” Rearrange life." },
+                    "Threader": { Bound: "“Yes. Guest room only.” Lock office door.", Unbound: "“Yes yes yes!” Panic-clean for hours." },
+                    "Deep Eye": { Bound: "“Yes, come Sunday.” Hold eye contact. Don’t flinch.", Unbound: "“Of course you can.” Eyes glaze." }
+                }
+            }
+        ];
+
+        // Engine Runtime Variables
+        let ACTIVE_SESSION_DECK = [];
+        let GLOBAL_ORIENTATION_MASK = [];
         let currentQuestionIdx = 0;
-        let selectedAnswers = []; // Will store selected element's data
+        let userChoices = []; // Stores selections mapping to index
         let archetypeDiscoveryOrder = [];
-        let activeQuestionSubsets = []; // Will store randomized 5-option subsets for each question
+        let processedOptionsCache = []; // Caches shuffled screen outputs
 
         window.onload = function() {
-            initializeQuizSession();
+            startJourney();
         };
 
-        function initializeQuizSession() {
-            // 1. Randomize the questions pool array completely
-            QUESTIONS = [...MASTER_QUESTIONS];
-            shuffleArray(QUESTIONS);
+        function startJourney() {
+            // Step 1: Scenario Deck Assembly
+            let clonedLight = [...LIGHT_POOL];
+            let clonedShadow = [...SHADOW_POOL];
+            shuffleArray(clonedLight);
+            shuffleArray(clonedShadow);
 
+            // Exactly 5 from each pool
+            let selectedLight = clonedLight.slice(0, 5);
+            let selectedShadow = clonedShadow.slice(0, 5);
+
+            ACTIVE_SESSION_DECK = selectedLight.concat(selectedShadow);
+            shuffleArray(ACTIVE_SESSION_DECK); // Pure unpredictability
+
+            // Step 2: Global Orientation Mask Assignment
+            GLOBAL_ORIENTATION_MASK = [-1, -1, -1, -1, -1, 1, 1, 1, 1, 1];
+            shuffleArray(GLOBAL_ORIENTATION_MASK);
+
+            // Reset States
             currentQuestionIdx = 0;
-            selectedAnswers = new Array(QUESTIONS.length).fill(null);
+            userChoices = new Array(10).fill(null);
             archetypeDiscoveryOrder = [];
-            activeQuestionSubsets = new Array(QUESTIONS.length).fill(null);
+            processedOptionsCache = new Array(10).fill(null);
 
-            loadQuestionLayout();
+            renderScreen();
         }
 
-        function loadQuestionLayout() {
-            if (activeQuestionSubsets[currentQuestionIdx] === null) {
-                const currentQuestion = QUESTIONS[currentQuestionIdx];
-                const archetypes = ['Pathwalker', 'Ember-Keeper', 'Metamorph', 'Threader', 'Deep Eye'];
-                let subset = [];
+        function renderScreen() {
+            const activeScenario = ACTIVE_SESSION_DECK[currentQuestionIdx];
+            const activeMask = GLOBAL_ORIENTATION_MASK[currentQuestionIdx]; // -1 = Bound, 1 = Unbound
+            const targetOrientationKey = activeMask === -1 ? "Bound" : "Unbound";
 
-                // For each of the 5 archetypes, pick 1 variant option (randomly Bound or Unbound)
-                archetypes.forEach(arch => {
-                    const variants = currentQuestion.answers.filter(ans => ans.archetype === arch);
-                    if (variants.length > 0) {
-                        const randomVariant = variants[Math.floor(Math.random() * variants.length)];
-                        
-                        // Find its index in the original currentQuestion.answers array
-                        const originalIndex = currentQuestion.answers.indexOf(randomVariant);
-                        
-                        subset.push({
-                            data: randomVariant,
-                            originalIndex: originalIndex
-                        });
-                    }
-                });
-
-                // Shuffle the 5 chosen archetype answers so they don't always appear in a set sequence
-                shuffleArray(subset);
-                activeQuestionSubsets[currentQuestionIdx] = subset;
-            }
-
-            renderQuestion();
-        }
-
-        function renderQuestion() {
-            const currentQuestion = QUESTIONS[currentQuestionIdx];
+            // Progress Indicator Update
             document.getElementById("currentQuestionNumber").innerText = currentQuestionIdx + 1;
-            document.getElementById("sceneSetting").innerText = currentQuestion.scene;
-            document.getElementById("questionText").innerText = currentQuestion.question;
-            
+            document.getElementById("sceneSetting").innerText = activeScenario.scene;
+            document.getElementById("questionText").innerText = activeScenario.question;
+
+            // Nav Controls Toggle
             document.getElementById("prevBtn").disabled = (currentQuestionIdx === 0);
-            
             const nextBtn = document.getElementById("nextBtn");
-            nextBtn.innerText = (currentQuestionIdx === QUESTIONS.length - 1) ? "View Results" : "Next";
+            nextBtn.innerText = (currentQuestionIdx === 9) ? "View Results" : "Next";
 
             const optionsContainer = document.getElementById("answerOptions");
             optionsContainer.innerHTML = "";
 
-            const lockedSubset = activeQuestionSubsets[currentQuestionIdx];
+            // Step 3: Presenting the Screen (Symmetrical Omnipresent Choice Extraction & Shuffling)
+            if (!processedOptionsCache[currentQuestionIdx]) {
+                const archetypes = ["Pathwalker", "Ember-Keeper", "Metamorph", "Threader", "Deep Eye"];
+                let screenOptions = [];
 
-            lockedSubset.forEach((item) => {
+                archetypes.forEach(arch => {
+                    screenOptions.push({
+                        archetype: arch,
+                        text: activeScenario.answers[arch][targetOrientationKey]
+                    });
+                });
+
+                shuffleArray(screenOptions);
+                processedOptionsCache[currentQuestionIdx] = screenOptions;
+            }
+
+            const currentScreenOptions = processedOptionsCache[currentQuestionIdx];
+
+            currentScreenOptions.forEach((option, index) => {
                 const button = document.createElement("button");
                 button.className = "answer-btn";
                 
-                if (selectedAnswers[currentQuestionIdx] !== null && selectedAnswers[currentQuestionIdx].originalIndex === item.originalIndex) {
+                if (userChoices[currentQuestionIdx] !== null && userChoices[currentQuestionIdx].archetype === option.archetype) {
                     button.classList.add("selected");
                 }
-                
-                button.innerText = item.data.text;
-                button.onclick = () => selectAnswer(item);
+
+                button.innerText = option.text;
+                button.onclick = () => selectAnswer(option);
                 optionsContainer.appendChild(button);
             });
         }
 
-        function selectAnswer(item) {
-            // Save selected subset item
-            selectedAnswers[currentQuestionIdx] = item;
-            
-            const arch = item.data.archetype;
-            if (!archetypeDiscoveryOrder.includes(arch)) {
-                archetypeDiscoveryOrder.push(arch);
+        function selectAnswer(option) {
+            userChoices[currentQuestionIdx] = option;
+
+            // Capture Chronological Discovery Tracking Order for Tie-Breaking
+            if (!archetypeDiscoveryOrder.includes(option.archetype)) {
+                archetypeDiscoveryOrder.push(option.archetype);
             }
-            
-            renderQuestion();
+
+            renderScreen();
         }
 
         function nextQuestion() {
-            if (selectedAnswers[currentQuestionIdx] === null) {
+            if (userChoices[currentQuestionIdx] === null) {
                 alert("Please select an option to continue your journey.");
                 return;
             }
 
-            if (currentQuestionIdx < QUESTIONS.length - 1) {
+            if (currentQuestionIdx < 9) {
                 currentQuestionIdx++;
-                loadQuestionLayout();
+                renderScreen();
             } else {
                 calculateAndShowResults();
             }
@@ -694,64 +730,68 @@
         function prevQuestion() {
             if (currentQuestionIdx > 0) {
                 currentQuestionIdx--;
-                loadQuestionLayout();
+                renderScreen();
             }
         }
 
         function calculateAndShowResults() {
-            const archetypeScores = { 'Pathwalker': 0, 'Ember-Keeper': 0, 'Metamorph': 0, 'Deep Eye': 0, 'Threader': 0 };
-            let orientationCumulativeScore = 0;
+            // 1. Calculate Archetype Accumulators
+            const archetypeScores = { "Pathwalker": 0, "Ember-Keeper": 0, "Metamorph": 0, "Threader": 0, "Deep Eye": 0 };
+            let orientationCumulativeValue = 0;
 
-            selectedAnswers.forEach((item) => {
-                const answerData = item.data;
-                archetypeScores[answerData.archetype] += 1;
-                orientationCumulativeScore += answerData.value;
+            userChoices.forEach((choice, index) => {
+                archetypeScores[choice.archetype] += 1;
+                // Accumulate tracking mask matrix rules
+                orientationCumulativeValue += GLOBAL_ORIENTATION_MASK[index]; 
             });
 
-            let primaryArchetype = '';
-            let maxArchScore = -1;
-            
+            // Primary Archetype Extraction & Discovery Tie Breaking Rule
+            let primaryArchetype = "";
+            let highestScore = -1;
+
             for (const arch in archetypeScores) {
-                const score = archetypeScores[arch];
-                if (score > maxArchScore) {
-                    maxArchScore = score;
+                if (archetypeScores[arch] > highestScore) {
+                    highestScore = archetypeScores[arch];
                     primaryArchetype = arch;
-                } else if (score === maxArchScore) {
-                    const indexCurrentMax = archetypeDiscoveryOrder.indexOf(primaryArchetype);
+                } else if (archetypeScores[arch] === highestScore) {
+                    // Check discovery order array index (lowest index = discovered first)
+                    const indexCurrentPrimary = archetypeDiscoveryOrder.indexOf(primaryArchetype);
                     const indexChallenger = archetypeDiscoveryOrder.indexOf(arch);
-                    if (indexChallenger < indexCurrentMax) {
+                    if (indexChallenger < indexCurrentPrimary) {
                         primaryArchetype = arch;
                     }
                 }
             }
 
-            let primaryOrientation = 'Bound';
-            if (orientationCumulativeScore > 0) {
-                primaryOrientation = 'Unbound';
-            } else if (orientationCumulativeScore === 0) {
-                primaryOrientation = Math.random() < 0.5 ? 'Bound' : 'Unbound';
+            // 2. Primary Orientation Matrix Matrix Rule
+            let primaryOrientation = "Bound";
+            if (orientationCumulativeValue > 0) {
+                primaryOrientation = "Unbound";
+            } else if (orientationCumulativeValue === 0) {
+                primaryOrientation = Math.random() < 0.5 ? "Bound" : "Unbound"; // Symmetrical Coin Flip fallback
             }
 
-            const resultData = ARCHETYPE_CONTENT[primaryArchetype][primaryOrientation];
+            // 3. Mount Content Object Injection
+            const destinationContent = ARCHETYPE_CONTENT[primaryArchetype][primaryOrientation];
 
             document.getElementById("questionSection").style.display = "none";
             document.getElementById("resultSection").style.display = "block";
-            
+
             document.getElementById("resBadge").innerText = `${primaryArchetype.toUpperCase()} — ${primaryOrientation.toUpperCase()}`;
-            document.getElementById("resPassportDesc").innerText = resultData.desc;
-            document.getElementById("resMythTitle").innerText = resultData.mythTitle;
-            document.getElementById("resMythSummary").innerText = resultData.mythText;
-            document.getElementById("resCoreMessage").innerText = `Core Message: ${resultData.core}`;
-            document.getElementById("resPromptText").innerText = resultData.prompt;
+            document.getElementById("resPassportDesc").innerText = destinationContent.desc;
+            document.getElementById("resMythTitle").innerText = destinationContent.mythTitle;
+            document.getElementById("resMythSummary").innerText = destinationContent.mythText;
+            document.getElementById("resCoreMessage").innerText = `Core Message: ${destinationContent.core}`;
+            document.getElementById("resPromptText").innerText = destinationContent.prompt;
         }
 
         function retakeQuiz() {
-            initializeQuizSession();
             document.getElementById("resultSection").style.display = "none";
             document.getElementById("questionSection").style.display = "block";
+            startJourney();
         }
 
-        // Standard array shuffling utility
+        // Fisher-Yates Global Utility Array Engine Shuffler
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
